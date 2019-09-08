@@ -14,6 +14,8 @@
 		299AD9622325A59F00CC6932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299AD9602325A59F00CC6932 /* LaunchScreen.storyboard */; };
 		299AD96D2325A59F00CC6932 /* StringToHiraganaiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD96C2325A59F00CC6932 /* StringToHiraganaiOSTests.swift */; };
 		299AD9782325A59F00CC6932 /* StringToHiraganaiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9772325A59F00CC6932 /* StringToHiraganaiOSUITests.swift */; };
+		299AD98B2325BFAA00CC6932 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299AD98A2325BFAA00CC6932 /* keys.plist */; };
+		299AD98D2325C16F00CC6932 /* GooAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD98C2325C16F00CC6932 /* GooAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		299AD9732325A59F00CC6932 /* StringToHiraganaiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringToHiraganaiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299AD9772325A59F00CC6932 /* StringToHiraganaiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToHiraganaiOSUITests.swift; sourceTree = "<group>"; };
 		299AD9792325A59F00CC6932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299AD98A2325BFAA00CC6932 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		299AD98C2325C16F00CC6932 /* GooAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				299AD9572325A59E00CC6932 /* AppDelegate.swift */,
 				299AD9592325A59E00CC6932 /* ViewController.swift */,
+				299AD98C2325C16F00CC6932 /* GooAPI.swift */,
 				299AD95B2325A59E00CC6932 /* Main.storyboard */,
 				299AD95E2325A59F00CC6932 /* Assets.xcassets */,
 				299AD9602325A59F00CC6932 /* LaunchScreen.storyboard */,
 				299AD9632325A59F00CC6932 /* Info.plist */,
+				299AD98A2325BFAA00CC6932 /* keys.plist */,
 			);
 			path = StringToHiraganaiOS;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD98B2325BFAA00CC6932 /* keys.plist in Resources */,
 				299AD9622325A59F00CC6932 /* LaunchScreen.storyboard in Resources */,
 				299AD95F2325A59F00CC6932 /* Assets.xcassets in Resources */,
 				299AD95D2325A59E00CC6932 /* Main.storyboard in Resources */,
@@ -280,6 +287,7 @@
 			files = (
 				299AD95A2325A59E00CC6932 /* ViewController.swift in Sources */,
 				299AD9582325A59E00CC6932 /* AppDelegate.swift in Sources */,
+				299AD98D2325C16F00CC6932 /* GooAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,5 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let key = GooAPI.api_key {
+            print(key)
+        }
     }
 }
