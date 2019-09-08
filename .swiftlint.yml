@@ -1,0 +1,21 @@
+excluded:
+  - Carthage
+  - Pods
+disabled_rules:
+  - identifier_name
+  - line_length
+  - trailing_whitespace
+  - force_try
+  - force_cast
+  - function_body_length
+opt_in_rules:
+- attributes
+- closure_end_indentation
+- closure_spacing
+- empty_count
+- first_where
+- number_separator
+- overridden_super_call
+- private_outlet
+- prohibited_super_call
+- redundant_nil_coalescing
