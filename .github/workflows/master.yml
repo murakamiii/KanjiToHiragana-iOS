@@ -9,8 +9,6 @@ jobs:
     runs-on: macos-latest
     
     steps:
-    env:
-      with: goo_api_key: ${{ secrets.GOO_API_KEY }}
     - uses: actions/checkout@v1
     - name: Select Xcode version
       run: sudo xcode-select -s '/Applications/Xcode_10.3.app/Contents/Developer'
