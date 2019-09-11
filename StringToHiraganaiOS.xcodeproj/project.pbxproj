@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,30 @@
 		299AD95D2325A59E00CC6932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299AD95B2325A59E00CC6932 /* Main.storyboard */; };
 		299AD95F2325A59F00CC6932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299AD95E2325A59F00CC6932 /* Assets.xcassets */; };
 		299AD9622325A59F00CC6932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299AD9602325A59F00CC6932 /* LaunchScreen.storyboard */; };
-		299AD96D2325A59F00CC6932 /* StringToHiraganaiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD96C2325A59F00CC6932 /* StringToHiraganaiOSTests.swift */; };
+		299AD96D2325A59F00CC6932 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD96C2325A59F00CC6932 /* MainViewModelTests.swift */; };
 		299AD9782325A59F00CC6932 /* StringToHiraganaiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9772325A59F00CC6932 /* StringToHiraganaiOSUITests.swift */; };
+		299AD98F2325E66C00CC6932 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = 299AD98E2325E66C00CC6932 /* key.plist */; };
+		299AD9912325EC3300CC6932 /* GooAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9902325EC3300CC6932 /* GooAPI.swift */; };
+		299AD99A232605CC00CC6932 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD996232605CC00CC6932 /* RxSwift.framework */; };
+		299AD99B232605CC00CC6932 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD997232605CC00CC6932 /* RxCocoa.framework */; };
+		299AD99C232605CC00CC6932 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD998232605CC00CC6932 /* RxRelay.framework */; };
+		299AD99D232605CC00CC6932 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD999232605CC00CC6932 /* Reachability.framework */; };
+		299AD99F23271D4200CC6932 /* TranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD99E23271D4200CC6932 /* TranslateService.swift */; };
+		299AD9AB23283D3C00CC6932 /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD999232605CC00CC6932 /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9AC23283D3C00CC6932 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD997232605CC00CC6932 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9AD23283D3C00CC6932 /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD998232605CC00CC6932 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9AE23283D3C00CC6932 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD996232605CC00CC6932 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9B523283E0600CC6932 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD999232605CC00CC6932 /* Reachability.framework */; };
+		299AD9B623283E0600CC6932 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD997232605CC00CC6932 /* RxCocoa.framework */; };
+		299AD9B723283E0600CC6932 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD998232605CC00CC6932 /* RxRelay.framework */; };
+		299AD9B823283E0600CC6932 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD996232605CC00CC6932 /* RxSwift.framework */; };
+		299AD9BA23283E2A00CC6932 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD9B923283E2A00CC6932 /* RxBlocking.framework */; };
+		299AD9BB23283E3300CC6932 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD9B923283E2A00CC6932 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9BE2328BBEF00CC6932 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */; };
+		299AD9C32328C15700CC6932 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299AD9C22328C15700CC6932 /* Result.storyboard */; };
+		299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9C42328C17700CC6932 /* ResultViewController.swift */; };
+		299AD9CA2329835000CC6932 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD9C72329830000CC6932 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		299AD9CE2329A2EB00CC6932 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD9CD2329A2EA00CC6932 /* PKHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +55,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		299AD9A023283CDE00CC6932 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				299AD9CA2329835000CC6932 /* RxTest.framework in CopyFiles */,
+				299AD9AB23283D3C00CC6932 /* Reachability.framework in CopyFiles */,
+				299AD9AC23283D3C00CC6932 /* RxCocoa.framework in CopyFiles */,
+				299AD9AD23283D3C00CC6932 /* RxRelay.framework in CopyFiles */,
+				299AD9AE23283D3C00CC6932 /* RxSwift.framework in CopyFiles */,
+				299AD9BB23283E3300CC6932 /* RxBlocking.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		299AD9542325A59E00CC6932 /* StringToHiraganaiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StringToHiraganaiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299AD9572325A59E00CC6932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,11 +82,26 @@
 		299AD9612325A59F00CC6932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		299AD9632325A59F00CC6932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299AD9682325A59F00CC6932 /* StringToHiraganaiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringToHiraganaiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		299AD96C2325A59F00CC6932 /* StringToHiraganaiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToHiraganaiOSTests.swift; sourceTree = "<group>"; };
+		299AD96C2325A59F00CC6932 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 		299AD96E2325A59F00CC6932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299AD9732325A59F00CC6932 /* StringToHiraganaiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StringToHiraganaiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299AD9772325A59F00CC6932 /* StringToHiraganaiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToHiraganaiOSUITests.swift; sourceTree = "<group>"; };
 		299AD9792325A59F00CC6932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		299AD98E2325E66C00CC6932 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
+		299AD9902325EC3300CC6932 /* GooAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooAPI.swift; sourceTree = "<group>"; };
+		299AD9922326044300CC6932 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
+		299AD9932326045500CC6932 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
+		299AD996232605CC00CC6932 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		299AD997232605CC00CC6932 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		299AD998232605CC00CC6932 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		299AD999232605CC00CC6932 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		299AD99E23271D4200CC6932 /* TranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateService.swift; sourceTree = "<group>"; };
+		299AD9B923283E2A00CC6932 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		299AD9C22328C15700CC6932 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		299AD9C42328C17700CC6932 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		299AD9C72329830000CC6932 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		299AD9CD2329A2EA00CC6932 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9CE2329A2EB00CC6932 /* PKHUD.framework in Frameworks */,
+				299AD99A232605CC00CC6932 /* RxSwift.framework in Frameworks */,
+				299AD99B232605CC00CC6932 /* RxCocoa.framework in Frameworks */,
+				299AD99C232605CC00CC6932 /* RxRelay.framework in Frameworks */,
+				299AD99D232605CC00CC6932 /* Reachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +121,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9BA23283E2A00CC6932 /* RxBlocking.framework in Frameworks */,
+				299AD9B523283E0600CC6932 /* Reachability.framework in Frameworks */,
+				299AD9B623283E0600CC6932 /* RxCocoa.framework in Frameworks */,
+				299AD9B723283E0600CC6932 /* RxRelay.framework in Frameworks */,
+				299AD9B823283E0600CC6932 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +142,13 @@
 		299AD94B2325A59E00CC6932 = {
 			isa = PBXGroup;
 			children = (
+				299AD9922326044300CC6932 /* input.xcfilelist */,
+				299AD9932326045500CC6932 /* output.xcfilelist */,
 				299AD9562325A59E00CC6932 /* StringToHiraganaiOS */,
 				299AD96B2325A59F00CC6932 /* StringToHiraganaiOSTests */,
 				299AD9762325A59F00CC6932 /* StringToHiraganaiOSUITests */,
 				299AD9552325A59E00CC6932 /* Products */,
+				299AD995232605CC00CC6932 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +166,14 @@
 			isa = PBXGroup;
 			children = (
 				299AD9572325A59E00CC6932 /* AppDelegate.swift */,
-				299AD9592325A59E00CC6932 /* ViewController.swift */,
-				299AD95B2325A59E00CC6932 /* Main.storyboard */,
+				299AD9C12328C00B00CC6932 /* API */,
+				299AD9C02328BFFB00CC6932 /* Service */,
+				299AD9BF2328BE5D00CC6932 /* MainViewController */,
+				299AD9BC232841D500CC6932 /* ResultViewController */,
 				299AD95E2325A59F00CC6932 /* Assets.xcassets */,
 				299AD9602325A59F00CC6932 /* LaunchScreen.storyboard */,
 				299AD9632325A59F00CC6932 /* Info.plist */,
+				299AD98E2325E66C00CC6932 /* key.plist */,
 			);
 			path = StringToHiraganaiOS;
 			sourceTree = "<group>";
@@ -110,7 +181,7 @@
 		299AD96B2325A59F00CC6932 /* StringToHiraganaiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				299AD96C2325A59F00CC6932 /* StringToHiraganaiOSTests.swift */,
+				299AD96C2325A59F00CC6932 /* MainViewModelTests.swift */,
 				299AD96E2325A59F00CC6932 /* Info.plist */,
 			);
 			path = StringToHiraganaiOSTests;
@@ -125,6 +196,55 @@
 			path = StringToHiraganaiOSUITests;
 			sourceTree = "<group>";
 		};
+		299AD995232605CC00CC6932 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				299AD9CD2329A2EA00CC6932 /* PKHUD.framework */,
+				299AD9C72329830000CC6932 /* RxTest.framework */,
+				299AD9B923283E2A00CC6932 /* RxBlocking.framework */,
+				299AD999232605CC00CC6932 /* Reachability.framework */,
+				299AD997232605CC00CC6932 /* RxCocoa.framework */,
+				299AD998232605CC00CC6932 /* RxRelay.framework */,
+				299AD996232605CC00CC6932 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		299AD9BC232841D500CC6932 /* ResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				299AD9C22328C15700CC6932 /* Result.storyboard */,
+				299AD9C42328C17700CC6932 /* ResultViewController.swift */,
+			);
+			path = ResultViewController;
+			sourceTree = "<group>";
+		};
+		299AD9BF2328BE5D00CC6932 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				299AD95B2325A59E00CC6932 /* Main.storyboard */,
+				299AD9592325A59E00CC6932 /* ViewController.swift */,
+				299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		299AD9C02328BFFB00CC6932 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				299AD99E23271D4200CC6932 /* TranslateService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		299AD9C12328C00B00CC6932 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				299AD9902325EC3300CC6932 /* GooAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +256,7 @@
 				299AD9512325A59E00CC6932 /* Frameworks */,
 				299AD9522325A59E00CC6932 /* Resources */,
 				299AD9852325B08900CC6932 /* SwiftLint */,
+				299AD994232604D900CC6932 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -153,6 +274,7 @@
 				299AD9642325A59F00CC6932 /* Sources */,
 				299AD9652325A59F00CC6932 /* Frameworks */,
 				299AD9662325A59F00CC6932 /* Resources */,
+				299AD9A023283CDE00CC6932 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -230,6 +352,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9C32328C15700CC6932 /* Result.storyboard in Resources */,
+				299AD98F2325E66C00CC6932 /* key.plist in Resources */,
 				299AD9622325A59F00CC6932 /* LaunchScreen.storyboard in Resources */,
 				299AD95F2325A59F00CC6932 /* Assets.xcassets in Resources */,
 				299AD95D2325A59E00CC6932 /* Main.storyboard in Resources */,
@@ -271,6 +395,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		299AD994232604D900CC6932 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,8 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9BE2328BBEF00CC6932 /* MainViewModel.swift in Sources */,
+				299AD99F23271D4200CC6932 /* TranslateService.swift in Sources */,
 				299AD95A2325A59E00CC6932 /* ViewController.swift in Sources */,
 				299AD9582325A59E00CC6932 /* AppDelegate.swift in Sources */,
+				299AD9912325EC3300CC6932 /* GooAPI.swift in Sources */,
+				299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				299AD96D2325A59F00CC6932 /* StringToHiraganaiOSTests.swift in Sources */,
+				299AD96D2325A59F00CC6932 /* MainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +604,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFZF43X7V9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StringToHiraganaiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +627,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFZF43X7V9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StringToHiraganaiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,6 +651,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFZF43X7V9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StringToHiraganaiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +677,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AFZF43X7V9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StringToHiraganaiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

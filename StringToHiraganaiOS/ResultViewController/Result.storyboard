@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QmU-n4-cPH">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result View Controller-->
+        <scene sceneID="qbh-2Y-Y55">
+            <objects>
+                <viewController id="QmU-n4-cPH" customClass="ResultViewController" customModule="StringToHiraganaiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E2M-ZE-qAL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-1c-y0j">
+                                <rect key="frame" x="32" y="76" width="350" height="654"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RF-Zp-mR8">
+                                <rect key="frame" x="127" y="762" width="160" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="G5T-yF-qqg"/>
+                                    <constraint firstAttribute="width" constant="160" id="xoh-Tv-Ho7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="戻る"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9RF-Zp-mR8" firstAttribute="centerX" secondItem="rKk-1c-y0j" secondAttribute="centerX" id="1pR-C7-cYB"/>
+                            <constraint firstItem="rKk-1c-y0j" firstAttribute="leading" secondItem="5OO-n0-Gaa" secondAttribute="leading" constant="32" id="2im-Uf-pHd"/>
+                            <constraint firstItem="9RF-Zp-mR8" firstAttribute="top" secondItem="rKk-1c-y0j" secondAttribute="bottom" constant="32" id="4oY-VL-ghI"/>
+                            <constraint firstItem="5OO-n0-Gaa" firstAttribute="bottom" secondItem="rKk-1c-y0j" secondAttribute="bottom" constant="132" id="GCi-tD-vYB"/>
+                            <constraint firstItem="5OO-n0-Gaa" firstAttribute="trailing" secondItem="rKk-1c-y0j" secondAttribute="trailing" constant="32" id="fjx-E9-sm9"/>
+                            <constraint firstItem="rKk-1c-y0j" firstAttribute="top" secondItem="5OO-n0-Gaa" secondAttribute="top" constant="32" id="kSf-41-fp3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5OO-n0-Gaa"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="9RF-Zp-mR8" id="Ob4-D6-E2j"/>
+                        <outlet property="resultTextView" destination="rKk-1c-y0j" id="BuQ-04-qSy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jGb-Ds-6yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="177"/>
+        </scene>
+    </scenes>
+</document>
