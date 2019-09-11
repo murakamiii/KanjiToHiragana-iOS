@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Select Xcode version
+      run: sudo xcode-select -s '/Applications/Xcode_10.3.app/Contents/Developer'
+      
+    - name: Show Devices List
+      run: xcrun instruments -s
+      
+    - name: SwiftLint
+      run: brew install swiftlint && swiftlint
+      
+    - name: Generate Plist
+      run: goo=${{ secrets.GITHUB_TOKEN }} envsubst < plistTemplate.txt > key.plist
+      
+    - name: Build # シミュレーター向け
+      run: xcodebuild -sdk iphonesimulator -configuration Debug build 
