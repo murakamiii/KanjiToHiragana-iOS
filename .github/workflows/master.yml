@@ -23,6 +23,9 @@ jobs:
       
     - name: Generate Plist
       run: brew link --force gettext && goo=${{ secrets.GITHUB_TOKEN }} envsubst < plist-template.txt > key.plist
+    
+    - name: Carthage 
+      run: carthage update --platform iOS --no-use-binaries
       
     - name: Build # シミュレーター向け
       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
