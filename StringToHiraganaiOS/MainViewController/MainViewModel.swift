@@ -13,15 +13,28 @@ import RxCocoa
 class MainViewModel {
     let error: Observable<APIError>
     let converted: Observable<String>
+    let isLoading: BehaviorRelay<Bool>
     
     init(textInput: Observable<String>, buttonEvent: Observable<Void>, service: TranslateServiceProtocol) {
-        let res = buttonEvent.withLatestFrom(textInput).flatMapLatest {
-            service.translate(sentence: $0)
-        }.materialize().share(replay: 1)
+        let load = BehaviorRelay<Bool>(value: false)
+        
+        let res = buttonEvent.debug().withLatestFrom(textInput)
+            .do(onNext: { _ in
+                load.accept(true)
+            })
+            .flatMapLatest {
+                service.translate(sentence: $0).materialize()
+            }
+            .do(onNext: { _ in
+                load.accept(false)
+            })
+            .share(replay: 1)
         
         converted = res.elements()
         error = res.errors()
             .map { $0 as? APIError ?? APIError.unknown(error: $0) }
+        
+        isLoading = load
     }
 }
 

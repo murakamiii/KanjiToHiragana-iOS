@@ -19,6 +19,7 @@
 # Build settings will be expanded, e.g. $(SRCROOT)/fileName
 
 $(SRCROOT)/Carthage/Build/iOS/Reachability.framework
+$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework
 $(SRCROOT)/Carthage/Build/iOS/RxSwift.framework
 $(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework
 $(SRCROOT)/Carthage/Build/iOS/RxRelay.framework

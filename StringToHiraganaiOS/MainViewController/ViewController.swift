@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 class ViewController: UIViewController {
     @IBOutlet private weak var inputTextView: UITextView!
@@ -36,7 +37,20 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.showResultVC(converted: str)
             }
-        }).disposed(by: disposebag)
+        })
+        .disposed(by: disposebag)
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        vm.isLoading.subscribe(onNext: { isLoading in
+            DispatchQueue.main.async {
+                if isLoading {
+                    PKHUD.sharedHUD.show()
+                } else {
+                    PKHUD.sharedHUD.hide()
+                }
+            }
+        })
+        .disposed(by: disposebag)
         
         viewModel = vm
     }
