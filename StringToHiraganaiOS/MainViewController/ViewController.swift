@@ -33,9 +33,16 @@ class ViewController: UIViewController {
         let vm = MainViewModel(textInput: input, buttonEvent: tapEvent, service: TranslateService())
         
         vm.converted.asObservable().subscribe(onNext: { str in
-            print(str)
+            DispatchQueue.main.async {
+                self.showResultVC(converted: str)
+            }
         }).disposed(by: disposebag)
         
         viewModel = vm
+    }
+    
+    private func showResultVC(converted: String) {
+        let vc = ResultViewController.make(converted: converted)
+        self.present(vc, animated: true, completion: nil)
     }
 }

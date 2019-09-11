@@ -34,6 +34,8 @@
 		299AD9BA23283E2A00CC6932 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD9B923283E2A00CC6932 /* RxBlocking.framework */; };
 		299AD9BB23283E3300CC6932 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD9B923283E2A00CC6932 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		299AD9BE2328BBEF00CC6932 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */; };
+		299AD9C32328C15700CC6932 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299AD9C22328C15700CC6932 /* Result.storyboard */; };
+		299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9C42328C17700CC6932 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		299AD9B123283D9500CC6932 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
 		299AD9B923283E2A00CC6932 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		299AD9C22328C15700CC6932 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		299AD9C42328C17700CC6932 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,12 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				299AD9572325A59E00CC6932 /* AppDelegate.swift */,
-				299AD9902325EC3300CC6932 /* GooAPI.swift */,
-				299AD95B2325A59E00CC6932 /* Main.storyboard */,
-				299AD99E23271D4200CC6932 /* TranslateService.swift */,
-				299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */,
-				299AD9592325A59E00CC6932 /* ViewController.swift */,
-				299AD9BC232841D500CC6932 /* ResultView */,
+				299AD9C12328C00B00CC6932 /* API */,
+				299AD9C02328BFFB00CC6932 /* Service */,
+				299AD9BF2328BE5D00CC6932 /* MainViewController */,
+				299AD9BC232841D500CC6932 /* ResultViewController */,
 				299AD95E2325A59F00CC6932 /* Assets.xcassets */,
 				299AD9602325A59F00CC6932 /* LaunchScreen.storyboard */,
 				299AD9632325A59F00CC6932 /* Info.plist */,
@@ -206,11 +208,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		299AD9BC232841D500CC6932 /* ResultView */ = {
+		299AD9BC232841D500CC6932 /* ResultViewController */ = {
 			isa = PBXGroup;
 			children = (
+				299AD9C22328C15700CC6932 /* Result.storyboard */,
+				299AD9C42328C17700CC6932 /* ResultViewController.swift */,
 			);
-			path = ResultView;
+			path = ResultViewController;
+			sourceTree = "<group>";
+		};
+		299AD9BF2328BE5D00CC6932 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				299AD95B2325A59E00CC6932 /* Main.storyboard */,
+				299AD9BD2328BBEF00CC6932 /* MainViewModel.swift */,
+				299AD9592325A59E00CC6932 /* ViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		299AD9C02328BFFB00CC6932 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				299AD99E23271D4200CC6932 /* TranslateService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		299AD9C12328C00B00CC6932 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				299AD9902325EC3300CC6932 /* GooAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9C32328C15700CC6932 /* Result.storyboard in Resources */,
 				299AD98F2325E66C00CC6932 /* key.plist in Resources */,
 				299AD9622325A59F00CC6932 /* LaunchScreen.storyboard in Resources */,
 				299AD95F2325A59F00CC6932 /* Assets.xcassets in Resources */,
@@ -394,6 +425,7 @@
 				299AD95A2325A59E00CC6932 /* ViewController.swift in Sources */,
 				299AD9582325A59E00CC6932 /* AppDelegate.swift in Sources */,
 				299AD9912325EC3300CC6932 /* GooAPI.swift in Sources */,
+				299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
