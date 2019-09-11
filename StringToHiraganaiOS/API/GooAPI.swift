@@ -9,17 +9,34 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Reachability
 
 enum APIError: Error {
     case client
+    case network
     case server(info: ErrorResponse?)
     case unknown(error: Error?)
+    
+    func message() -> String {
+        switch self {
+        case .client:
+            return "アプリ側に問題があります（ごめんなさい）。"
+        case .network:
+            return "ネットワーク環境に問題があります。"
+        case .server(let info):
+            return info?.error.message ?? "サーバー側に問題が発生しているようです。"
+        case .unknown(error: let err):
+            return err?.localizedDescription ?? "原因不明のエラーです。"
+        }
+    }
 }
 
 extension APIError: Equatable {
     static func == (lhs: APIError, rhs: APIError) -> Bool {
         switch (lhs, rhs) {
         case (.client, .client):
+            return true
+        case (.network, .network):
             return true
         case (.server(info: let lhsInfo), .server(info: let rhsInfo)):
             return lhsInfo == rhsInfo
@@ -32,8 +49,12 @@ extension APIError: Equatable {
 }
 
 struct ErrorResponse: Decodable, Equatable {
-    let error: Int
-    let message: String
+    struct Info: Decodable, Equatable {
+        let code: Int
+        let message: String
+    }
+    
+    let error: ErrorResponse.Info
 }
 
 struct Response: Decodable {
@@ -62,6 +83,10 @@ class GooAPI {
     }
     
     func transrate(sentence: String) -> Observable<Response> {
+        if Reachability.init()!.connection == .none {
+            return Observable.error(APIError.network)
+        }
+        
         let body = ["app_id": apiKey, "sentence": sentence, "output_type": "hiragana"]
         guard let json = try? JSONSerialization.data(withJSONObject: body, options: []) else {
             return Observable.error(APIError.client)

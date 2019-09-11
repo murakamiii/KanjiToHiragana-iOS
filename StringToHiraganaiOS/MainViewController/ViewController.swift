@@ -40,6 +40,11 @@ class ViewController: UIViewController {
         })
         .disposed(by: disposebag)
         
+        vm.error.subscribe(onNext: { err in
+            self.showAlert(error: err)
+        })
+        .disposed(by: disposebag)
+        
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         vm.isLoading.subscribe(onNext: { isLoading in
             DispatchQueue.main.async {
@@ -58,5 +63,11 @@ class ViewController: UIViewController {
     private func showResultVC(converted: String) {
         let vc = ResultViewController.make(converted: converted)
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func showAlert(error: APIError) {
+        let alert = UIAlertController(title: "エラー", message: error.message(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
