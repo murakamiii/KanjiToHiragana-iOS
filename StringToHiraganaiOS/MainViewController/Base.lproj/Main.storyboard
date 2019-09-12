@@ -38,24 +38,25 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-vb-qAf">
-                                <rect key="frame" x="32" y="76" width="350" height="658"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="32" y="76" width="350" height="645"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Klq-vb-qAf" secondAttribute="bottom" constant="128" id="KUD-vS-ObM"/>
+                            <constraint firstItem="nLN-6z-p7N" firstAttribute="top" secondItem="Klq-vb-qAf" secondAttribute="bottom" constant="32" id="KUD-vS-ObM"/>
                             <constraint firstItem="Klq-vb-qAf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UtG-Ni-y59"/>
                             <constraint firstItem="Klq-vb-qAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="aaE-m3-MKE"/>
                             <constraint firstItem="nLN-6z-p7N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cvU-xF-zwX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Klq-vb-qAf" secondAttribute="trailing" constant="32" id="lUF-OG-a5R"/>
-                            <constraint firstItem="nLN-6z-p7N" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-64" id="rge-4c-oAp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nLN-6z-p7N" secondAttribute="bottom" constant="64" id="rge-4c-oAp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnBottomConstraint" destination="rge-4c-oAp" id="mRb-uR-urD"/>
                         <outlet property="inputTextView" destination="Klq-vb-qAf" id="Zaz-3r-cbU"/>
                         <outlet property="translateButton" destination="nLN-6z-p7N" id="p7Y-TU-dp0"/>
                     </connections>

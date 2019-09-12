@@ -14,48 +14,68 @@ import PKHUD
 class ViewController: UIViewController {
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: BorderedButton!
-    
+    @IBOutlet weak var btnBottomConstraint: NSLayoutConstraint!
+    let btnBottomDefaultValue: CGFloat = 64.0
+
     var viewModel: MainViewModel!
     let disposebag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupUI()
         bindUI()
     }
     
+    private func setupUI() {
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillShowNotification)
+            .subscribe(onNext: {[weak self] notif in
+                if let self = self,
+                    let frame = notif.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                    self.btnBottomConstraint.constant = self.btnBottomDefaultValue + frame.cgRectValue.height
+                }
+            })
+            .disposed(by: disposebag)
+        
+        NotificationCenter.default.rx
+            .notification(UIResponder.keyboardWillHideNotification)
+            .subscribe(onNext: {[weak self] _ in
+                if let self = self {
+                    self.btnBottomConstraint.constant = self.btnBottomDefaultValue
+                }
+            })
+            .disposed(by: disposebag)
+    }
+    
     private func bindUI() {
-        let input = inputTextView.rx
-            .text
-            .orEmpty
-            .asObservable()
+        let textInput = inputTextView.rx.text.orEmpty.asObservable()
         let tapEvent = translateButton.rx.tap.asObservable()
         
-        let vm = MainViewModel(textInput: input, buttonEvent: tapEvent, service: TranslateService())
+        let vm = MainViewModel(textInput: textInput, buttonEvent: tapEvent, service: TranslateService())
         
-        vm.converted.asObservable().subscribe(onNext: { str in
-            DispatchQueue.main.async {
+        vm.converted.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { str in
                 self.showResultVC(converted: str)
-            }
-        })
-        .disposed(by: disposebag)
+            })
+            .disposed(by: disposebag)
         
-        vm.error.subscribe(onNext: { err in
-            self.showAlert(error: err)
-        })
-        .disposed(by: disposebag)
+        vm.error
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { err in
+                self.showAlert(error: err)
+            })
+            .disposed(by: disposebag)
         
-        PKHUD.sharedHUD.contentView = PKHUDProgressView()
-        vm.isLoading.subscribe(onNext: { isLoading in
-            DispatchQueue.main.async {
-                if isLoading {
-                    PKHUD.sharedHUD.show()
-                } else {
-                    PKHUD.sharedHUD.hide()
-                }
-            }
-        })
-        .disposed(by: disposebag)
+        vm.isLoading
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { isLoading in
+                isLoading ? PKHUD.sharedHUD.show() : PKHUD.sharedHUD.hide()
+            })
+            .disposed(by: disposebag)
         
         viewModel = vm
     }
