@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable class BorderedButton: UIButton {
+@IBDesignable
+class BorderedButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 0.0
     @IBInspectable var borderColor: UIColor = .black
     @IBInspectable var borderWidth: CGFloat = 0.0
