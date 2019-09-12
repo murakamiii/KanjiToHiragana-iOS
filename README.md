@@ -2,6 +2,10 @@
 
 ### 環境
 ~~~
+$ swift --version
+Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)
+Target: x86_64-apple-darwin18.7.0
+
 $ xcodebuild -version
 Xcode 10.3
 Build version 10G8
@@ -31,3 +35,5 @@ $ cat StringToHiraganaiOS/key.plist
 </dict>
 </plist>
 ~~~
+
+Carthage/Buildsは入っていますが、Swift5.0.1でのBuildなので適宜carthage updateしてください
