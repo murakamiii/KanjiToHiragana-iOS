@@ -19,5 +19,15 @@ key.plistにGooAPIのAPIkeyが入っていますがgitignoreしているので�
 # envsubstがないって言われる場合は事前に以下のコマンドでlinkしておいてください
 # brew link --force gettext
 
-goo=YOUR_GOO_API_KEY envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
+$ goo=YOUR_GOO_API_KEY envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
+
+$ cat StringToHiraganaiOS/key.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>goo_api</key>
+        <string>YOUR_GOO_API_KEY</string>
+</dict>
+</plist>
 ~~~
