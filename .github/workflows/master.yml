@@ -23,6 +23,9 @@ jobs:
       
     - name: Generate Plist
       run: brew link --force gettext && goo=${{ secrets.GOO_API_KEY }} envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
-      
+
+    - name: XCTest
+      run: xcodebuild test -scheme StringToHiraganaiOS -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.4'
+
     - name: Build # シミュレーター向け
       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
