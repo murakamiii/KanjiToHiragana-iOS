@@ -17,29 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-6z-p7N">
-                                <rect key="frame" x="157" y="76" width="100" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-6z-p7N" customClass="BorderedButton" customModule="StringToHiraganaiOS" customModuleProvider="target">
+                                <rect key="frame" x="127" y="753" width="160" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="GIt-0j-L54"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fm0-Bj-frS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="fm0-Bj-frS"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="翻訳"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-vb-qAf">
-                                <rect key="frame" x="32" y="153" width="350" height="677"/>
+                                <rect key="frame" x="32" y="76" width="350" height="658"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Klq-vb-qAf" secondAttribute="bottom" constant="32" id="KUD-vS-ObM"/>
-                            <constraint firstItem="Klq-vb-qAf" firstAttribute="top" secondItem="nLN-6z-p7N" secondAttribute="bottom" constant="32" id="UtG-Ni-y59"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Klq-vb-qAf" secondAttribute="bottom" constant="128" id="KUD-vS-ObM"/>
+                            <constraint firstItem="Klq-vb-qAf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UtG-Ni-y59"/>
                             <constraint firstItem="Klq-vb-qAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="aaE-m3-MKE"/>
                             <constraint firstItem="nLN-6z-p7N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cvU-xF-zwX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Klq-vb-qAf" secondAttribute="trailing" constant="32" id="lUF-OG-a5R"/>
-                            <constraint firstItem="nLN-6z-p7N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="rge-4c-oAp"/>
+                            <constraint firstItem="nLN-6z-p7N" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-64" id="rge-4c-oAp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

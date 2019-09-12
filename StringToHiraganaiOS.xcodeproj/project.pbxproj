@@ -36,6 +36,7 @@
 		299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9C42328C17700CC6932 /* ResultViewController.swift */; };
 		299AD9CA2329835000CC6932 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD9C72329830000CC6932 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		299AD9CE2329A2EB00CC6932 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD9CD2329A2EA00CC6932 /* PKHUD.framework */; };
+		299AD9D22329F1A600CC6932 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9D12329F1A600CC6932 /* BorderedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		299AD9C42328C17700CC6932 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		299AD9C72329830000CC6932 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		299AD9CD2329A2EA00CC6932 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		299AD9D12329F1A600CC6932 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				299AD9572325A59E00CC6932 /* AppDelegate.swift */,
+				299AD9D02329F18600CC6932 /* UI */,
 				299AD9C12328C00B00CC6932 /* API */,
 				299AD9C02328BFFB00CC6932 /* Service */,
 				299AD9BF2328BE5D00CC6932 /* MainViewController */,
@@ -243,6 +246,14 @@
 				299AD9902325EC3300CC6932 /* GooAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		299AD9D02329F18600CC6932 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				299AD9D12329F1A600CC6932 /* BorderedButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				299AD9582325A59E00CC6932 /* AppDelegate.swift in Sources */,
 				299AD9912325EC3300CC6932 /* GooAPI.swift in Sources */,
 				299AD9C52328C17700CC6932 /* ResultViewController.swift in Sources */,
+				299AD9D22329F1A600CC6932 /* BorderedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

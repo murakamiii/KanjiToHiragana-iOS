@@ -13,7 +13,7 @@ import PKHUD
 
 class ViewController: UIViewController {
     @IBOutlet private weak var inputTextView: UITextView!
-    @IBOutlet private weak var translateButton: UIButton!
+    @IBOutlet private weak var translateButton: BorderedButton!
     
     var viewModel: MainViewModel!
     let disposebag = DisposeBag()
