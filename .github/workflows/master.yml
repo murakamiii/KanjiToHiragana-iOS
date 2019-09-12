@@ -22,7 +22,7 @@ jobs:
       run: brew install swiftlint && swiftlint
       
     - name: Generate Plist
-      run: brew link --force gettext && goo=${{ secrets.GITHUB_TOKEN }} envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
+      run: brew link --force gettext && goo=${{ secrets.GOO_API_KEY }} envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
       
     - name: Build # シミュレーター向け
       run: xcodebuild -sdk iphonesimulator -configuration Debug build 
