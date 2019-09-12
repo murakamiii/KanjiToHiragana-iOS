@@ -17,7 +17,7 @@ class TranslateService: TranslateServiceProtocol {
     func translate(sentence: String) -> Observable<String> {
         return GooAPI()?
             .transrate(sentence: sentence)
-            .map { $0.converted } ?? Observable.of("")
+            .map { $0.converted.replacingOccurrences(of: " ", with: "") } ?? Observable.of("")
     }
 }
 
