@@ -14,7 +14,7 @@ import PKHUD
 class ViewController: UIViewController {
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: BorderedButton!
-    @IBOutlet weak var btnBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var btnBottomConstraint: NSLayoutConstraint!
     let btnBottomDefaultValue: CGFloat = 64.0
 
     var viewModel: MainViewModel!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         setupUI()
         bindUI()
     }
@@ -53,6 +53,9 @@ class ViewController: UIViewController {
     private func bindUI() {
         let textInput = inputTextView.rx.text.orEmpty.asObservable()
         let tapEvent = translateButton.rx.tap.asObservable()
+            .do(onNext: { _ in
+                _ = self.view.endEditing(true)
+            })
         
         let vm = MainViewModel(textInput: textInput, buttonEvent: tapEvent, service: TranslateService())
         
