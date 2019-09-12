@@ -12,8 +12,8 @@ import RxSwift
 import RxCocoa
 
 class ResultViewController: UIViewController {
-    @IBOutlet weak var resultTextView: UITextView!
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet private weak var resultTextView: UITextView!
+    @IBOutlet private weak var backButton: BorderedButton!
 
     var convertedText: String!
     let disposeBag = DisposeBag()

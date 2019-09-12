@@ -19,7 +19,7 @@ jobs:
       run: xcrun instruments -s
       
     - name: SwiftLint
-      run: brew install swiftlint && swiftlint
+      run: brew install swiftlint && swiftlint --strict
       
     - name: Generate Plist
       run: brew link --force gettext && goo=${{ secrets.GOO_API_KEY }} envsubst < plist-template.txt > StringToHiraganaiOS/key.plist
