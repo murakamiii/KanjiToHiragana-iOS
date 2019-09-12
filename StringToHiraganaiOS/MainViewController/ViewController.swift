@@ -51,11 +51,15 @@ class ViewController: UIViewController {
     }
     
     private func bindUI() {
-        let textInput = inputTextView.rx.text.orEmpty.asObservable()
+        let textInput = inputTextView.rx.text.orEmpty.asObservable().share(replay: 1)
         let tapEvent = translateButton.rx.tap.asObservable()
             .do(onNext: { _ in
                 _ = self.view.endEditing(true)
             })
+        
+        textInput.map { !$0.isEmpty }
+            .bind(to: translateButton.rx.isEnabled)
+            .disposed(by: disposebag)
         
         let vm = MainViewModel(textInput: textInput, buttonEvent: tapEvent, service: TranslateService())
         
