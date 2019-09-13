@@ -64,6 +64,12 @@ struct Response: Decodable {
 }
 
 class GooAPI {
+    
+    enum OutputType: String {
+        case hiragana
+        case katakana
+    }
+    
     private static func gooAPIKeyFromPlist() -> String? {
         if let path = Bundle.main.path(forResource: "key", ofType: "plist"),
             let ndic = NSDictionary.init(contentsOfFile: path),
@@ -74,28 +80,30 @@ class GooAPI {
     }
     
     private let apiKey: String
-    init?() {
+    private let hiraganaUrl: URL
+    
+    init?(url: URL) {
         guard let key = GooAPI.gooAPIKeyFromPlist() else {
             return nil
         }
         
         apiKey = key
+        hiraganaUrl = url
     }
     
-    func transrate(sentence: String) -> Observable<Response> {
+    func transrate(sentence: String, outputType: GooAPI.OutputType) -> Observable<Response> {
         if Reachability.init()!.connection == .none {
             return Observable.error(APIError.network)
         }
         
-        let body = ["app_id": apiKey, "sentence": sentence, "output_type": "hiragana"]
+        let body = ["app_id": apiKey, "sentence": sentence, "output_type": outputType.rawValue]
         guard let json = try? JSONSerialization.data(withJSONObject: body, options: []) else {
             return Observable.error(APIError.client)
         }
         
         let session = URLSession.shared
-        let url = URL(string: "https://labs.goo.ne.jp/api/hiragana")!
-        
-        var req = URLRequest(url: url)
+
+        var req = URLRequest(url: hiraganaUrl)
         req.httpMethod = "POST"
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = json

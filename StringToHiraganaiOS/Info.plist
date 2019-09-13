@@ -41,5 +41,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>hiragana_url</key>
+	<string>$(HIRAGANA_URL)</string>
 </dict>
 </plist>

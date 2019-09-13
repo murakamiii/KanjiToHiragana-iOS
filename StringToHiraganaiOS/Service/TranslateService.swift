@@ -15,8 +15,10 @@ protocol TranslateServiceProtocol {
 
 class TranslateService: TranslateServiceProtocol {
     func translate(sentence: String) -> Observable<String> {
-        return GooAPI()?
-            .transrate(sentence: sentence)
+        let url = URL(string: Bundle.main.object(forInfoDictionaryKey: "hiragana_url") as! String)!
+        
+        return GooAPI(url: url)?
+            .transrate(sentence: sentence, outputType: .hiragana)
             .map { $0.converted.replacingOccurrences(of: " ", with: "") } ?? Observable.of("")
     }
 }
