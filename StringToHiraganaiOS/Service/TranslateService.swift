@@ -15,30 +15,10 @@ protocol TranslateServiceProtocol {
 
 class TranslateService: TranslateServiceProtocol {
     func translate(sentence: String) -> Observable<String> {
-        return GooAPI()?
-            .transrate(sentence: sentence)
+        let url = URL(string: Bundle.main.object(forInfoDictionaryKey: "hiragana_url") as! String)!
+        
+        return GooAPI(url: url)?
+            .transrate(sentence: sentence, outputType: .hiragana)
             .map { $0.converted.replacingOccurrences(of: " ", with: "") } ?? Observable.of("")
-    }
-}
-
-class MockTranslateService: TranslateServiceProtocol {
-    let mockSuffix: String
-    init(suffix: String) {
-        mockSuffix = suffix
-    }
-    
-    func translate(sentence: String) -> Observable<String> {
-        return Observable.of(sentence + mockSuffix)
-    }
-}
-
-class ErrorMockTranslateService: TranslateServiceProtocol {
-    let mockErr: APIError
-    init(error: APIError) {
-        mockErr = error
-    }
-    
-    func translate(sentence: String) -> Observable<String> {
-        return Observable.error(mockErr)
     }
 }

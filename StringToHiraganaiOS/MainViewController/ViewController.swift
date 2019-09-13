@@ -15,10 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet private weak var inputTextView: UITextView!
     @IBOutlet private weak var translateButton: BorderedButton!
     @IBOutlet private weak var btnBottomConstraint: NSLayoutConstraint!
-    let btnBottomDefaultValue: CGFloat = 64.0
+    private let btnBottomDefaultValue: CGFloat = 64.0
 
-    var viewModel: MainViewModel!
-    let disposebag = DisposeBag()
+    private lazy var viewModel: MainViewModel = bindedViewModel()
+    private let disposebag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             .disposed(by: disposebag)
     }
     
-    private func bindUI() {
+    private func bindedViewModel() -> MainViewModel {
         let textInput = inputTextView.rx.text.orEmpty.asObservable().share(replay: 1)
         let tapEvent = translateButton.rx.tap.asObservable()
             .do(onNext: { _ in
@@ -61,30 +61,30 @@ class ViewController: UIViewController {
             .bind(to: translateButton.rx.isEnabled)
             .disposed(by: disposebag)
         
-        let vm = MainViewModel(textInput: textInput, buttonEvent: tapEvent, service: TranslateService())
-        
-        vm.converted.asObservable()
+        return MainViewModel(textInput: textInput, buttonEvent: tapEvent, service: TranslateService())
+    }
+    
+    private func bindUI() {
+        viewModel.converted.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { str in
                 self.showResultVC(converted: str)
             })
             .disposed(by: disposebag)
         
-        vm.error
+        viewModel.error
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { err in
                 self.showAlert(error: err)
             })
             .disposed(by: disposebag)
         
-        vm.isLoading
+        viewModel.isLoading
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { isLoading in
                 isLoading ? PKHUD.sharedHUD.show() : PKHUD.sharedHUD.hide()
             })
             .disposed(by: disposebag)
-        
-        viewModel = vm
     }
     
     private func showResultVC(converted: String) {
