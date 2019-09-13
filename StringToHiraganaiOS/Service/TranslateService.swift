@@ -20,25 +20,3 @@ class TranslateService: TranslateServiceProtocol {
             .map { $0.converted.replacingOccurrences(of: " ", with: "") } ?? Observable.of("")
     }
 }
-
-class MockTranslateService: TranslateServiceProtocol {
-    let mockSuffix: String
-    init(suffix: String) {
-        mockSuffix = suffix
-    }
-    
-    func translate(sentence: String) -> Observable<String> {
-        return Observable.of(sentence + mockSuffix)
-    }
-}
-
-class ErrorMockTranslateService: TranslateServiceProtocol {
-    let mockErr: APIError
-    init(error: APIError) {
-        mockErr = error
-    }
-    
-    func translate(sentence: String) -> Observable<String> {
-        return Observable.error(mockErr)
-    }
-}

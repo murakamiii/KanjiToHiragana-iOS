@@ -37,6 +37,7 @@
 		299AD9CA2329835000CC6932 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 299AD9C72329830000CC6932 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		299AD9CE2329A2EB00CC6932 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299AD9CD2329A2EA00CC6932 /* PKHUD.framework */; };
 		299AD9D22329F1A600CC6932 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9D12329F1A600CC6932 /* BorderedButton.swift */; };
+		299AD9D4232B961200CC6932 /* MockTranslateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AD9D3232B961200CC6932 /* MockTranslateService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		299AD9C72329830000CC6932 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		299AD9CD2329A2EA00CC6932 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		299AD9D12329F1A600CC6932 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		299AD9D3232B961200CC6932 /* MockTranslateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTranslateService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		299AD96B2325A59F00CC6932 /* StringToHiraganaiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				299AD9D3232B961200CC6932 /* MockTranslateService.swift */,
 				299AD96C2325A59F00CC6932 /* MainViewModelTests.swift */,
 				299AD96E2325A59F00CC6932 /* Info.plist */,
 			);
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299AD9D4232B961200CC6932 /* MockTranslateService.swift in Sources */,
 				299AD96D2325A59F00CC6932 /* MainViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
