@@ -1,4 +1,5 @@
 # KanjiToHiragana-iOS
+![](https://github.com/murakamiii/KanjiToHiragana-iOS/workflows/CI/badge.svg)
 
 ### 環境
 ~~~
